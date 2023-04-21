@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <script src="https://kit.fontawesome.com/358d766f87.js" crossorigin="anonymous"></script>
+    <title>My portfolio</title>
+    <style>
+        /* =====Essentials===== */
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'poppins', sans-serif;
+        }
+        body{
+            background-color: black;
+            color: white;
+        }
+        /* =====navigation bar===== */
+        nav{
+            display: flex;
+            width: 100%;
+            margin: auto;
+            padding:10px;
+            align-items: center;
+            justify-content: space-between;
+        }
+        nav img{
+            padding-top: 5px;
+            height: 100px;
+        }
+        nav ul li{
+            display: inline-block;
+            list-style: none;
+            margin: 8px 15px;
+        }
+        nav ul li a{
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            position: relative;
+        }
+        nav ul li a::after{
+            content: '';
+            width: 0;
+            height: 3px;
+            background: orange;
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            transition: 0.5s;
+        }
+        nav ul li a:hover::after{
+            width: 100%;
+        }
+        /* =====body of the page===== */
+        .space{
+            height: 150px;
+        }
+        .space1{
+            height: 30px;
+        }
+        section{
+            display: flex;
+            width: 100%;
+        }
+        section main{
+            width: 50%;
+        }
+        section main .text{
+            padding-left: 40px;
+        }
+        section main h1{
+            font-weight: bold;
+            font-size: 50px;
+        }
+        section main h3{
+            font-weight: bold;
+            font-size: 30px;
+        }
+        section main p{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        section main span{
+            color: orange;
+        }
+        section main a{
+            background-color: white;
+            padding: 10px 18px;
+            text-decoration: none;
+            font-weight: bold;
+            color: black;
+            display: inline-block;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        section main a:hover{
+            color: white;
+            background-color: orange;
+        }
+        section main i{
+            margin: 7px;
+        }
+
+        /* =====About===== */
+        .about-row{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .about-col-1{
+            flex-basis: 35%;
+        }
+        .about-col-1 img{
+            width: 100%;
+            border-radius: 15px;
+        }
+        .about-col-2{
+            flex-basis: 60%;
+        }
+        .about-row .about-col-2 h1{
+            font-size: 60px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* =====About-Tabs====== */
+        .tab-titles{
+            display: flex;
+            margin: 20px 0 40px;
+        }
+        .tab-links{
+            margin-right: 50px;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            position: relative;
+        }
+        .tab-links::after{
+            content: '';
+            width: 0;
+            height: 3px;
+            background: orange;
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            transition: 0.5s;
+        }
+        .tab-links.active-link::after{
+            width: 50%;
+        }
+        #text{
+            font-size: 15px;
+            color: grey;
+        }
+        .tab-contents{
+            font-size: 13px;
+            color: grey;
+            display: none;
+        }
+        .tab-contents ul li{
+            list-style: none;
+            margin: 10px 0;
+        }
+        .tab-contents ul li span{
+            color: orange;
+            font-size: 15px;
+        }
+        .tab-contents.active-tab{
+            display: block;
+        }
+        /* =========services=========== */
+        .services .container .services-list{
+            display: flex;
+            width: 100%;
+        }
+        .services .container .services-list div{
+            background: #26262626;
+            padding-top: 25px;
+            flex-basis: 30%;
+            padding-left: 40px;
+            border-radius: 50px;
+        }
+        .services .container h1{
+            text-align: center;
+            font-size: 40px;
+        }
+        .services i{
+            font-size: 50px;
+        }
+        
+        /* =========contact============= */
+        .contact .row{
+            display: flex;
+            width: 100%;
+        }
+        .contact-left{
+            width: 50%;
+            padding-left: 35px;
+            padding-top: 30px;
+        }
+        
+        .contact-left h1{
+            padding-left: 10px;
+        }
+        .contact-left i{
+            color: white;
+            margin: 8px;
+        }
+        .contact-left i:hover{
+            color: orange;
+        }
+        .contact-right{
+            width: 50%;
+            padding-left: 35px;
+        }
+        .contact-right h1{
+            /* padding-left: 30px; */
+            text-align: center;
+        }
+        .contact-right form{
+            text-align: center
+        }
+        .contact-right form button{
+            color: white;
+            background: orange;
+            border-color: orange;
+            cursor: pointer;
+        }
+        #orange{
+            color: orange;
+        }
+        @media only screen and (max-width:450px){
+            nav{
+                width: 100%;
+                display: block;
+            }
+            nav a{
+                font-size: 15px;
+            }
+            nav img{
+                padding-left: 0;
+            }
+            section{
+                display: block;
+            }
+            section main{
+                width: 100%;
+            }
+            section main img{
+                width: 100%;
+            }
+            section main .text h1{
+                font-size: 35px;
+            }
+            section main .text h3{
+                font-size: 30px;
+            }
+            section main .text p{
+                font-size: 25px;
+            }
+            section main .text a{
+                padding: 10px;
+            }
+            .services .container .services-list{
+                display: block;
+            }
+            .services .container .services-list div{
+                width: 100%;
+                text-align: center;
+                /* margin-left: 10px ; */
+            }
+            .contact .row{
+                width: 100%;
+                display: block;
+            }
+            .contact .row .contact-left {
+                padding-left: 100px;
+            }
+            .contact .row .contact-left h1{
+                text-align: center;
+                /* padding-left: 5px; */
+            }
+            .contact .row .contact-right{
+                padding-left: 140px;
+            }
+            .about-row{
+                display: block;
+            }
+            .about-row .about-col-2{
+                width: 100%;
+                text-align: center;
+            }
+            .about-row .about-col-2 .tab-links{
+                margin-left: 20px;
+            }
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <!-- =====navigation bar===== -->
+    <nav>
+        <img src="asset/media/images/.png" alt="">
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="#david">About</a></li>
+            <li><a href="#alone">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <section>
+        <main>
+            <div class="space"></div>
+            <div class="text">
+                <h1>Hi I'm Abubakar <span>Hamisu</span>,</h1>
+            <h3><span>W</span>EB <span>D</span>ESIGNER</h3>
+            <p>I am a web designer and developer from Nigeria  
+                <br>I create websites to do business better online</p>
+                <a href="#">HIRE ME</a>
+                 <div class="social-link">
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-telegram"></i>
+                    <i class="fa-brands fa-whatsapp" title="visit my Whatsapp"></i>
+                    <i class="fa-solid fa-envelope"></i>
+                    <p><i class="fa-solid fa-phone"></i> +2348082033908</p>
+            </div>
+            
+        </main>
+        <main>
+            <img src="sadiq3.jfif" alt="">
+        </main>
+        
+        
+    </section>
+    <br><br><br><br><br>
+    <div class="about-row">
+        
+            <div class="about-col-1">
+                <img name="Slide" alt="">
+            </div>
+            <div class="about-col-2">
+                <h1>About me</h1>
+                <p id="text">Hi I'm Abubakar Hamisu,<br>
+                     A WEB DESIGNER<br>
+                    I am a nigerian, My area of interest is frontend development,i am specialized<br> in all kind of graphic user interface such as personal website,e-commerces website,<br>blog website.  
+                    <br>
+                    <H2>EDUCATION BACKGROUND</H2><BR>
+                    I study in great golden height school zaria kaduna state.which am an SSCE holder and i study in Naowa Institue of Science and Technology(NIMTA).
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>HTML5</span><br>93%</li>
+                            <li><span>Cascading Style Sheet</span><br>71%</li>
+                            <li><span>JavaScript</span><br>45%</li>
+                        </ul>
+                    </div>
+                                        <!-- break -->
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2021</span><br>W3chools</li>
+                            <li><span>2022</span><br>kelvins Tutorial Youtube</li>
+                            <li><span>2023</span><br>NIMTA Web development class</li>
+                        </ul>
+                    </div>
+                                        <!-- break -->
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2023</span><br>Facebook Form Duplicate</li>
+                            <li><span>2023</span><br>Instagram Form Duplicate</li>
+                            <li><span>2023</span><br>Personal blog</li>
+                        </ul>
+                                        </div>
+            </div>
+        
+        </div>
+        
+    <!-- ========services========= -->
+    <div class="services">
+        <div class="container">
+            <h1>My services</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-user"></i>
+                    <h2>
+                        Personal website
+                    </h2>
+                    <p>Designing Web/App interfaces <br> Web Development<br>Web app Development <br>
+                        App Development<br>Building Android/IOS apps</p>
+                        <br>
+                </div>
+  <!-- 2 -->
+                <div>
+                    <i class="fa-solid fa-piggy-bank"></i>
+                    <h2>
+                        eCommerce website
+                    </h2>
+                    <p>Designing Web/App interfaces <br> Web Development<br>Web app Development <br>
+                        App Development<br>Building Android/IOS apps</p>
+                        <br>
+                </div>
+<!-- 3 -->
+<div>
+    <i class="fa-solid fa-blog"></i>
+    <h2>
+        Blog website
+    </h2>
+    <p>Designing Web/App interfaces <br> Web Development<br>Web app Development <br>
+        App Development<br>Building Android/IOS apps</p>
+        <br>
+</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- =========contact========== -->
+    <div class="contact" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1>Contact me</h1>
+                    <br><br>
+                    <div class="social-link">
+                        <br><br>
+                        <p><i id="orange" class="fa-solid fa-envelope"></i> Abubakarhamisu779@gmail.com</p>
+                        <p><i id="orange" class="fa-solid fa-phone"></i> +2348082033908</p>
+                        <br><br>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-telegram"></i>
+                        <i class="fa-brands fa-whatsapp" title="visit my Whatsapp"></i>
+                </div>
+                </div>
+                <div class="contact-right">
+                    <br><br>
+                    <h1>Message me</h1>
+                    <br><br>
+                    <form action="">
+                        <input type="text" name="name" placeholder="Your Name"><br><br>
+                        <input type="email" name="email" placeholder="Your Email"><br><br>
+                        <textarea name="message" rows="6" placeholder="Your Message"></textarea><br><br>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="space1"></div>
+
+</body>
+</html>
+<script>
+    //slider
+    let i = 0;
+    let images = [];
+    let time = 3000; // changes every 3 seconds
+
+
+    //images list
+    images[0] = "sadiq.jfif";
+    images[1] = "sadiq2.jpg";
+
+    //change image
+    function changeImg(){
+        document.Slide.src = images[i];
+        if(i < images.length -1){
+            i++;
+        } else {
+            i = 0;
+        }
+        setTimeout("changeImg()", time)
+    }
+    window.onload = changeImg;
+
+    // tablinks
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for (tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab")
+    }
+</script>
